@@ -1,0 +1,34 @@
+div#myModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+    div.modal-dialog
+        div.modal-content
+            div.modal-header.
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">電柱情報の更新</h4>
+            form.form-horizontal(name="info",action="/info/update",method="post")
+                div.modal-body
+                    div.form-group
+                        label.control-label.col-sm-3: 緯度・経度
+                        div.col-sm-9
+                            p.form-control-static 
+                                span.x: 1234
+                                span.y: 134
+                                input#info-id(name="info-id",type="hidden")
+                                input.x(name="x",type="hidden")
+                                input.y(name="y",type="hidden")
+                    div.form-group
+                        label.control-label.col-sm-3(for="info-name"): 名称
+                        div.col-sm-9
+                            input#info-name.form-control(name="info-name",type="text")
+                    div.form-group
+                        label.control-label.col-sm-3(for="info-photo"): 画像
+                        div.col-sm-9
+                            input#info-photo(name="info-photo",type="file",accept="image/*",multiple)
+                    div.form-group
+                        label.control-label.col-sm-3(for="info-cmt"): コメント 
+                        div.col-sm-9
+                            textarea#info-cmt.form-control(name="info-cmt",row="3")
+                div.modal-footer
+                    button.btn.btn-default(type="button",data-dismiss="modal"): キャンセル
+                    button.btn.btn-primary(type="submit")
+                        span.glyphicon.glyphicon-ok
+                        保存 

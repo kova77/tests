@@ -1,0 +1,10 @@
+//
+    form.navbar-form.navbar-right(role="search")
+        div.form-group
+            input.form-control(type="text", placeholder="住所検索")
+        button.btn.btn-primary(type="submit"): i.glyphicon.glyphicon-search
+form#search.navbar-form.navbar-right(action="/saerch",name="search",role="search")
+    div.form-group.input-group
+        input.form-control(name="q",type="text", placeholder="住所検索")
+        span.input-group-btn
+            button.btn.btn-primary(type="submit"): i.glyphicon.glyphicon-search
